@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Mohamed Dagmoumi Essafi - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* === GLOBAL STYLES === */
+        /* === CSS VARIABLES === */
         :root {
             --primary: #2c3e50;
             --secondary: #3498db;
@@ -14,47 +14,77 @@
             --light: #ecf0f1;
             --dark: #2c3e50;
             --text: #34495e;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
         }
 
+        /* === RESET & BASE STYLES === */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         html {
             scroll-behavior: smooth;
+            font-size: 16px;
         }
 
         body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text);
             background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
 
         .container {
-            width: 90%;
-            max-width: 1200px;
+            width: 92%;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 16px;
         }
 
         section {
-            padding: 100px 0;
+            padding: clamp(3rem, 8vw, 6rem) 0;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: clamp(2rem, 6vw, 4rem);
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
             color: var(--primary);
             position: relative;
             display: inline-block;
-            padding-bottom: 15px;
+            padding-bottom: 0.75rem;
         }
 
         .section-title h2::after {
@@ -69,22 +99,37 @@
         }
 
         .btn {
-            display: inline-block;
-            padding: 12px 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem);
             background: var(--secondary);
             color: white;
-            text-decoration: none;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
             font-weight: 600;
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            text-align: center;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            gap: 0.5rem;
         }
 
         .btn:hover {
             background: #2980b9;
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+
+        .btn-outline:hover {
+            background: var(--secondary);
+            color: white;
         }
 
         /* === HEADER & NAVIGATION === */
@@ -95,20 +140,21 @@
             width: 100%;
             top: 0;
             z-index: 1000;
+            backdrop-filter: blur(10px);
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: clamp(1rem, 3vw, 1.25rem) 0;
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
             font-weight: 700;
             color: var(--primary);
-            text-decoration: none;
+            white-space: nowrap;
         }
 
         .logo span {
@@ -117,19 +163,16 @@
 
         .nav-links {
             display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 30px;
+            gap: clamp(1rem, 3vw, 2rem);
         }
 
         .nav-links a {
-            text-decoration: none;
             color: var(--dark);
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: var(--transition);
             position: relative;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            white-space: nowrap;
         }
 
         .nav-links a:hover {
@@ -144,7 +187,7 @@
             background: var(--secondary);
             bottom: -5px;
             left: 0;
-            transition: width 0.3s ease;
+            transition: var(--transition);
         }
 
         .nav-links a:hover::after {
@@ -155,64 +198,73 @@
             display: none;
             cursor: pointer;
             font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--primary);
         }
 
         /* === HERO SECTION === */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             position: relative;
             overflow: hidden;
+            padding: 80px 0 40px;
         }
 
         .hero-content {
-            max-width: 600px;
+            max-width: min(600px, 90vw);
             z-index: 1;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            margin-bottom: 1rem;
             color: var(--primary);
+            line-height: 1.1;
         }
 
         .hero h2 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+            font-size: clamp(1.1rem, 3vw, 1.8rem);
+            margin-bottom: 1.5rem;
             color: var(--secondary);
             font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .hero h2 a {
+            color: var(--secondary);
+            transition: var(--transition);
+            display: inline-block;
+            margin: 0 4px;
+        }
+
+        .hero h2 a:hover {
+            color: var(--primary);
+            transform: translateY(-2px);
         }
 
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            margin-bottom: 2rem;
             color: var(--text);
+            line-height: 1.6;
         }
 
         .hero-btns {
             display: flex;
-            gap: 15px;
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--secondary);
-            color: var(--secondary);
-        }
-
-        .btn-outline:hover {
-            background: var(--secondary);
-            color: white;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
 
         .hero-image {
             position: absolute;
-            right: 10%;
+            right: 5%;
             bottom: 0;
-            width: 400px;
-            height: 500px;
+            width: min(400px, 40vw);
+            height: min(500px, 60vh);
             background: var(--secondary);
             border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
             opacity: 0.1;
@@ -226,21 +278,20 @@
         .about-content {
             display: grid;
             grid-template-columns: 1fr 2fr;
-            gap: 50px;
+            gap: clamp(2rem, 5vw, 3rem);
             align-items: center;
         }
 
         .about-image {
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow);
         }
 
         .about-image img {
             width: 100%;
             height: auto;
-            display: block;
-            transition: transform 0.5s ease;
+            transition: var(--transition);
         }
 
         .about-image:hover img {
@@ -248,47 +299,57 @@
         }
 
         .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
+            margin-bottom: 1.5rem;
             color: var(--primary);
         }
 
         .about-text p {
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
         }
 
         .skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
         }
 
         .skill {
             background: var(--light);
-            padding: 8px 15px;
-            border-radius: 30px;
-            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+            border: 1px solid #ddd;
+            transition: var(--transition);
+        }
+
+        .skill:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
         }
 
         /* === PROJECTS SECTION === */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+            gap: clamp(1.5rem, 4vw, 2rem);
         }
 
         .project-card {
             background: white;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid #f0f0f0;
+            height: fit-content;
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
 
         .project-image {
@@ -300,7 +361,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: var(--transition);
         }
 
         .project-card:hover .project-image img {
@@ -308,52 +369,62 @@
         }
 
         .project-info {
-            padding: 25px;
+            padding: clamp(1.25rem, 3vw, 1.5rem);
         }
 
         .project-info h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
+            font-size: clamp(1.2rem, 3vw, 1.4rem);
+            margin-bottom: 0.75rem;
             color: var(--primary);
+            line-height: 1.3;
         }
 
         .project-info p {
-            margin-bottom: 15px;
+            margin-bottom: 1rem;
             color: var(--text);
+            line-height: 1.6;
+            font-size: clamp(0.9rem, 2vw, 1rem);
         }
 
         .project-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 15px;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
         }
 
         .project-tag {
             background: var(--light);
-            padding: 5px 10px;
+            padding: 0.4rem 0.8rem;
             border-radius: 4px;
-            font-size: 0.8rem;
+            font-size: clamp(0.75rem, 2vw, 0.8rem);
             color: var(--secondary);
+            border: 1px solid #ddd;
         }
 
         .project-links {
             display: flex;
-            gap: 15px;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
 
         .project-link {
             color: var(--secondary);
-            text-decoration: none;
             font-weight: 500;
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 5px;
-            transition: color 0.3s ease;
+            gap: 0.4rem;
+            transition: var(--transition);
+            font-size: clamp(0.85rem, 2vw, 0.9rem);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            border: 1px solid var(--secondary);
         }
 
         .project-link:hover {
-            color: var(--primary);
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
         }
 
         /* === CONTACT SECTION === */
@@ -364,19 +435,19 @@
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: clamp(2rem, 5vw, 3rem);
         }
 
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 1.5rem;
         }
 
         .contact-item {
             display: flex;
             align-items: flex-start;
-            gap: 15px;
+            gap: 1rem;
         }
 
         .contact-icon {
@@ -389,100 +460,134 @@
             align-items: center;
             justify-content: center;
             font-size: 1.2rem;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover .contact-icon {
+            transform: scale(1.1);
         }
 
         .contact-details h3 {
-            margin-bottom: 5px;
+            margin-bottom: 0.3rem;
             color: var(--primary);
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+        }
+
+        .contact-details p {
+            color: var(--text);
+            font-size: clamp(0.9rem, 2vw, 1rem);
         }
 
         .contact-form {
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: clamp(1.5rem, 4vw, 2rem);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 1.25rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 0.5rem;
             font-weight: 500;
+            color: var(--primary);
+            font-size: clamp(0.9rem, 2vw, 1rem);
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 12px 15px;
+            padding: 0.75rem 1rem;
             border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-            transition: border 0.3s ease;
+            border-radius: 6px;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            transition: var(--transition);
+            font-family: inherit;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             border-color: var(--secondary);
             outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
         }
 
         .form-group textarea {
             height: 150px;
             resize: vertical;
+            min-height: 120px;
         }
 
         /* === FOOTER === */
         footer {
             background: var(--primary);
             color: white;
-            padding: 50px 0 20px;
+            padding: clamp(2rem, 5vw, 3rem) 0 1.25rem;
         }
 
         .footer-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 30px;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1.5rem;
         }
 
         .social-links {
             display: flex;
-            gap: 20px;
+            gap: 1.25rem;
         }
 
         .social-link {
             color: white;
             font-size: 1.3rem;
-            transition: color 0.3s ease;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .social-link:hover {
             color: var(--secondary);
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
         }
 
         .copyright {
             text-align: center;
-            padding-top: 20px;
+            padding-top: 1.25rem;
             border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.9rem;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
             color: rgba(255,255,255,0.7);
         }
 
         /* === RESPONSIVE DESIGN === */
-        @media (max-width: 992px) {
+        @media (max-width: 1024px) {
             .about-content {
                 grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .about-image {
+                max-width: 400px;
+                margin: 0 auto;
             }
             
             .contact-content {
                 grid-template-columns: 1fr;
             }
             
-            .hero h1 {
-                font-size: 2.8rem;
+            .hero-image {
+                display: none;
             }
         }
 
@@ -493,52 +598,150 @@
             
             .nav-links {
                 position: fixed;
-                top: 80px;
-                left: -100%;
+                top: 100%;
+                left: 0;
                 width: 100%;
-                height: calc(100vh - 80px);
                 background: white;
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-start;
-                padding-top: 50px;
-                transition: left 0.3s ease;
+                padding: 2rem 0;
+                transition: var(--transition);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-20px);
             }
             
             .nav-links.active {
-                left: 0;
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
             }
             
             .nav-links li {
-                margin: 15px 0;
+                margin: 0.75rem 0;
+            }
+            
+            .hero-btns {
+                justify-content: center;
+            }
+            
+            .hero-btns .btn {
+                flex: 1;
+                min-width: 200px;
+                text-align: center;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+                padding: 0 12px;
+            }
+            
+            .hero {
+                text-align: center;
             }
             
             .hero-btns {
                 flex-direction: column;
-                align-items: flex-start;
             }
             
-            .hero-image {
-                width: 300px;
-                height: 400px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .projects-grid {
-                grid-template-columns: 1fr;
+            .project-links {
+                flex-direction: column;
             }
             
-            .hero h1 {
-                font-size: 2.2rem;
+            .project-link {
+                justify-content: center;
+            }
+            
+            .skills {
+                justify-content: center;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
             }
             
             .hero h2 {
-                font-size: 1.4rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .hero h2 a {
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 360px) {
+            html {
+                font-size: 14px;
+            }
+            
+            .project-card {
+                margin: 0 -10px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
             }
             
             .section-title h2 {
-                font-size: 2rem;
+                font-size: 1.6rem;
+            }
+        }
+
+        /* === ACCESSIBILITY & PERFORMANCE === */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* === LOADING STATES === */
+        .loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        /* === PRINT STYLES === */
+        @media print {
+            .hero-btns,
+            .menu-toggle,
+            .social-links {
+                display: none !important;
+            }
+            
+            .hero {
+                min-height: auto;
+                padding: 2rem 0;
+            }
+            
+            section {
+                padding: 2rem 0;
             }
         }
     </style>
@@ -549,13 +752,9 @@
         <div class="container">
             <nav>
                 <a href="#" class="logo">MOHAMED<span>DAGMOUMI ESSAFI</span></a>
-                
-                
-                
-                
-                <div class="menu-toggle" id="menuToggle">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
                     <i class="fas fa-bars"></i>
-                </div>
+                </button>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -571,17 +770,19 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Hi, I'm <span style="color: var(--secondary);">MOHAMED DAGMOUMI ESSAFI</span></h1>
-                <h2><a href="https://www.linkedin.com/in/mohamed-dagmoumi-essafi">Future Mechatronics Engineer</a> |  
-<a href="https://www.linkedin.com/in/mohamed-dagmoumi-essafi"> Passionate about Machine Learning & Robotics </a> |  
-<a href="#">Building intelligent solutions</a>,
-<a href="#">Tech Enthusiast</a></h2>
+                <h2>
+                    <a href="https://www.linkedin.com/in/mohamed-dagmoumi-essafi">Future Mechatronics Engineer</a>
+                    <a href="https://www.linkedin.com/in/mohamed-dagmoumi-essafi">Passionate about Machine Learning & Robotics</a>
+                    <a href="#">Building intelligent solutions</a>
+                    <a href="#">Tech Enthusiast</a>
+                </h2>
                 <p>I create intelligent systems and digital solutions that connect technology, innovation, and real-world impact.</p>
                 <div class="hero-btns">
                     <a href="#projects" class="btn">View My Work</a>
                     <a href="#contact" class="btn btn-outline">Contact Me</a>
                 </div>
             </div>
-            <div class="hero-image"></div>
+            <div class="hero-image" aria-hidden="true"></div>
         </div>
     </section>
 
@@ -593,12 +794,12 @@
             </div>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="6032931731247584392.jpg" alt="Your Name">
+                    <img src="v3_xWTXWhbdRjG__ulaV2-zylJm_TQoz056VBimyxtWmtgKUV20WLp1imIxH_T0zZrvjw5icF6MYZCYUwYiE5vVCwbuCm7UJFNBgpDcDKZIoogftworIIgOucQPYX34uXlfR4eeJ7n4m_C27YFT8xe_GPg7957jv6IEN2mEJ63hNdp2yuNfUKIRXyVmly3xo43rfUBU06mra.jpg" alt="Mohamed Dagmoumi Essafi - Mechatronics Engineer" loading="lazy">
                 </div>
                 <div class="about-text">
                     <h3>Hello! I'm a passionate Mechatronics Engineer</h3>
-<p>As a master's student specializing in Mechatronics and Artificial Intelligence, I design and develop intelligent systems that combine mechanics, electronics, and software. My interests include robotics, automation, and smart control systems.</p>
-<p>I'm passionate about innovation, clean design, and continuous learning. When I'm not working on engineering projects, I enjoy exploring new technologies, learning about machine learning applications, or improving my programming skills.</p>
+                    <p>As a master's student specializing in Mechatronics and Artificial Intelligence, I design and develop intelligent systems that combine mechanics, electronics, and software. My interests include robotics, automation, and smart control systems.</p>
+                    <p>I'm passionate about innovation, clean design, and continuous learning. When I'm not working on engineering projects, I enjoy exploring new technologies, learning about machine learning applications, or improving my programming skills.</p>
                     <div class="skills">
                         <div class="skill">MatLab/Simulink</div>
                         <div class="skill">NI Multisim</div>
@@ -630,16 +831,16 @@
                 <!-- Project 1 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="E-Commerce Website">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Thermal Engine Design Project" loading="lazy">
                     </div>
                     <div class="project-info">
                         <h3>Design and Validation of a Thermal Engine</h3>
                         <p>
-                            <i>Thermo-mechanical analysis and energy optimization – ANSYS, CATIA, SOLIDWORKS</i>  
-  - Designed an optimized thermal engine focused on performance, energy efficiency, and emission reduction.  
-  - Conducted thermo-mechanical modeling and material selection to enhance durability and efficiency.  
-  - Integrated innovative technologies for improved combustion and heat transfer.  
-  - Performed simulations and validation to meet industrial and environmental standards.
+                            <i>Thermo-mechanical analysis and energy optimization – ANSYS, CATIA, SOLIDWORKS</i><br><br>
+                            - Designed an optimized thermal engine focused on performance, energy efficiency, and emission reduction.<br>
+                            - Conducted thermo-mechanical modeling and material selection to enhance durability and efficiency.<br>
+                            - Integrated innovative technologies for improved combustion and heat transfer.<br>
+                            - Performed simulations and validation to meet industrial and environmental standards.
                         </p>
                         <div class="project-tags">
                             <div class="project-tag">CATIA</div>
@@ -656,21 +857,19 @@
                 <!-- Project 2 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80" alt="Task Management App">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80" alt="Hydraulic Pressure Control System" loading="lazy">
                     </div>
                     <div class="project-info">
-<h3>Design of a Pressure Control System in a Hydraulic Circuit</h3>
-<p>This project aims to design and simulate a hydraulic pressure control system using MATLAB/Simulink. It focuses on modeling the system’s dynamics and implementing a PID controller to ensure stable and precise pressure regulation under varying conditions.</p>
-
-                     <div class="project-tags">
-                    <div class="project-tag">MATLAB</div>
-                    <div class="project-tag">Simulink</div>
-                    <div class="project-tag">PID Control</div>
-                    <div class="project-tag">Hydraulic System</div>
-                    <div class="project-tag">Modeling & Simulation</div>
-                    <div class="project-tag">Mechatronics</div>
-                </div>
-
+                        <h3>Design of a Pressure Control System in a Hydraulic Circuit</h3>
+                        <p>This project aims to design and simulate a hydraulic pressure control system using MATLAB/Simulink. It focuses on modeling the system's dynamics and implementing a PID controller to ensure stable and precise pressure regulation under varying conditions.</p>
+                        <div class="project-tags">
+                            <div class="project-tag">MATLAB</div>
+                            <div class="project-tag">Simulink</div>
+                            <div class="project-tag">PID Control</div>
+                            <div class="project-tag">Hydraulic System</div>
+                            <div class="project-tag">Modeling & Simulation</div>
+                            <div class="project-tag">Mechatronics</div>
+                        </div>
                         <div class="project-links">
                             <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                             <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
@@ -681,7 +880,7 @@
                 <!-- Project 3 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Weather Dashboard">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Automotive Diagnostics System" loading="lazy">
                     </div>
                     <div class="project-info">
                         <h3>Automotive Diagnostics System</h3>
@@ -692,7 +891,6 @@
                             <div class="project-tag">MPLAB X IDE</div>
                             <div class="project-tag">PROTEUS</div>
                             <div class="project-tag">PIC</div>
-                            
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
@@ -701,23 +899,20 @@
                     </div>
                 </div>
 
-
-                   <!-- Project 4 -->
+                <!-- Project 4 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Weather Dashboard">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="ABS System Design" loading="lazy">
                     </div>
                     <div class="project-info">
                         <h3>Design and Optimization of an ABS System (Anti-Lock Braking System)</h3>
-<p>This project involves the mechanical design and structural analysis of an Anti-Lock Braking System to improve vehicle safety and braking efficiency. Using CATIA and SolidWorks for 3D modeling, and Abaqus for finite element analysis, the system was optimized to enhance performance and reliability under real-world conditions.</p>
-
+                        <p>This project involves the mechanical design and structural analysis of an Anti-Lock Braking System to improve vehicle safety and braking efficiency. Using CATIA and SolidWorks for 3D modeling, and Abaqus for finite element analysis, the system was optimized to enhance performance and reliability under real-world conditions.</p>
                         <div class="project-tags">
                             <div class="project-tag">CATIA</div>
                             <div class="project-tag">SolidWorks</div>
                             <div class="project-tag">Abaqus</div>
                             <div class="project-tag">Mechanical Design</div>
                             <div class="project-tag">Validation</div>
-                            
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
@@ -726,10 +921,10 @@
                     </div>
                 </div>
 
-                   <!-- Project 5 -->
+                <!-- Project 5 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Weather Dashboard">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Amplitude Modulation Project" loading="lazy">
                     </div>
                     <div class="project-info">
                         <h3>Amplitude Modulation</h3>
@@ -739,7 +934,6 @@
                             <div class="project-tag">PROTEUS</div>
                             <div class="project-tag">signal processing</div>
                             <div class="project-tag">Communication Systems</div>
-                            
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
@@ -747,7 +941,6 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
         </div>
     </section>
@@ -819,10 +1012,18 @@
             <div class="footer-content">
                 <div class="logo">MOHAMED<span>DAGMOUMI ESSAFI</span></div>
                 <div class="social-links">
-                    <a href="https://github.com/MOHAMEDDAGMOUMI97" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/mohamed-dagmoumi-essafi" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+                    <a href="https://github.com/MOHAMEDDAGMOUMI97" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mohamed-dagmoumi-essafi" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Dribbble">
+                        <i class="fab fa-dribbble"></i>
+                    </a>
                 </div>
             </div>
             <div class="copyright">
@@ -838,23 +1039,104 @@
         
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+            const isExpanded = navLinks.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', isExpanded);
         });
         
         // Close menu when clicking on a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
             });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                navLinks.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
         });
         
         // Simple form submission handler
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.classList.add('loading');
+            
+            // Simulate form submission
+            setTimeout(() => {
+                alert('Thank you for your message! I will get back to you soon.');
+                this.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.classList.remove('loading');
+            }, 1500);
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add active class to navigation links based on scroll position
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            const scrollPosition = window.scrollY + 100;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Lazy loading for images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+        
+        // Add loading state for external links
+        document.querySelectorAll('a[href^="http"]').forEach(link => {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
         });
     </script>
 </body>
 </html>
-
-
