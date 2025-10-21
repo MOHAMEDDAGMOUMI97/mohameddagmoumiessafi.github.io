@@ -345,6 +345,7 @@
             transition: var(--transition);
             border: 1px solid #f0f0f0;
             height: fit-content;
+            cursor: pointer;
         }
 
         .project-card:hover {
@@ -425,6 +426,176 @@
             background: var(--secondary);
             color: white;
             transform: translateY(-2px);
+        }
+
+        /* === PROJECT MODAL === */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 2% auto;
+            border-radius: 12px;
+            max-width: 900px;
+            width: 95%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: slideUp 0.4s ease;
+            overflow: hidden;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            color: var(--text);
+            cursor: pointer;
+            z-index: 2001;
+            background: rgba(255, 255, 255, 0.9);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--accent);
+            transform: rotate(90deg);
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .modal-title {
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .modal-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-features {
+            margin-bottom: 2rem;
+        }
+
+        .modal-features h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .modal-features ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .modal-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text);
+        }
+
+        .modal-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .modal-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .tech-tag {
+            background: var(--light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--secondary);
+            border: 1px solid var(--secondary);
+        }
+
+        .modal-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .modal-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .modal-link:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .modal-link.outline {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+
+        .modal-link.outline:hover {
+            background: var(--secondary);
+            color: white;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* === CONTACT SECTION === */
@@ -637,6 +808,23 @@
                 flex-direction: column;
                 text-align: center;
             }
+            
+            .modal-content {
+                width: 98%;
+                margin: 5% auto;
+            }
+            
+            .modal-body {
+                padding: 1.5rem;
+            }
+            
+            .modal-links {
+                flex-direction: column;
+            }
+            
+            .modal-link {
+                justify-content: center;
+            }
         }
 
         @media (max-width: 480px) {
@@ -679,6 +867,22 @@
             
             .hero h2 a {
                 margin: 0;
+            }
+            
+            .modal-content {
+                margin: 2% auto;
+            }
+            
+            .modal-body {
+                padding: 1rem;
+            }
+            
+            .close-modal {
+                right: 10px;
+                top: 10px;
+                font-size: 1.5rem;
+                width: 35px;
+                height: 35px;
             }
         }
 
@@ -794,7 +998,7 @@
             </div>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="v3_xWTXWhbdRjG__ulaV2-zylJm_TQoz056VBimyxtWmtgKUV20WLp1imIxH_T0zZrvjw5icF6MYZCYUwYiE5vVCwbuCm7UJFNBgpDcDKZIoogftworIIgOucQPYX34uXlfR4eeJ7n4m_C27YFT8xe_GPg7957jv6IEN2mEJ63hNdp2yuNfUKIRXyVmly3xo43rfUBU06mra.jpg" alt="Mohamed Dagmoumi Essafi - Mechatronics Engineer" loading="lazy">
+                    <img src="6032931731247584392.jpg" alt="Mohamed Dagmoumi Essafi - Mechatronics Engineer" loading="lazy">
                 </div>
                 <div class="about-text">
                     <h3>Hello! I'm a passionate Mechatronics Engineer</h3>
@@ -829,7 +1033,7 @@
             </div>
             <div class="projects-grid">
                 <!-- Project 1 -->
-                <div class="project-card">
+                <div class="project-card" data-project="1">
                     <div class="project-image">
                         <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Thermal Engine Design Project" loading="lazy">
                     </div>
@@ -848,14 +1052,18 @@
                             <div class="project-tag">Abaqus</div>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+                            <button class="project-link view-details" data-project="1">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Project 2 -->
-                <div class="project-card">
+                <div class="project-card" data-project="2">
                     <div class="project-image">
                         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80" alt="Hydraulic Pressure Control System" loading="lazy">
                     </div>
@@ -871,14 +1079,18 @@
                             <div class="project-tag">Mechatronics</div>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+                            <button class="project-link view-details" data-project="2">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Project 3 -->
-                <div class="project-card">
+                <div class="project-card" data-project="3">
                     <div class="project-image">
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Automotive Diagnostics System" loading="lazy">
                     </div>
@@ -893,14 +1105,18 @@
                             <div class="project-tag">PIC</div>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="https://github.com/MOHAMEDDAGMOUMI97/Automotive_Diagnostic_System/tree/main" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+                            <button class="project-link view-details" data-project="3">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                            <a href="https://github.com/MOHAMEDDAGMOUMI97/Automotive_Diagnostic_System/tree/main" class="project-link">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 4 -->
-                <div class="project-card">
+                <div class="project-card" data-project="4">
                     <div class="project-image">
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="ABS System Design" loading="lazy">
                     </div>
@@ -915,14 +1131,18 @@
                             <div class="project-tag">Validation</div>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="https://github.com/MOHAMEDDAGMOUMI97/Automotive_Diagnostic_System/tree/main" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+                            <button class="project-link view-details" data-project="4">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                            <a href="https://github.com/MOHAMEDDAGMOUMI97/Automotive_Diagnostic_System/tree/main" class="project-link">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 5 -->
-                <div class="project-card">
+                <div class="project-card" data-project="5">
                     <div class="project-image">
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Amplitude Modulation Project" loading="lazy">
                     </div>
@@ -936,14 +1156,28 @@
                             <div class="project-tag">Communication Systems</div>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="https://github.com/MOHAMEDDAGMOUMI97/Automotive_Diagnostic_System/tree/main" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+                            <button class="project-link view-details" data-project="5">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                            <a href="https://github.com/MOHAMEDDAGMOUMI97/Automotive_Diagnostic_System/tree/main" class="project-link">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <!-- Content will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
@@ -1033,6 +1267,95 @@
     </footer>
 
     <script>
+        // Project data for modals
+        const projectsData = {
+            1: {
+                title: "Design and Validation of a Thermal Engine",
+                image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+                description: "Thermo-mechanical analysis and energy optimization – ANSYS, CATIA, SOLIDWORKS",
+                fullDescription: "This project involved the comprehensive design and validation of a thermal engine with a focus on performance optimization, energy efficiency, and emission reduction. The design process incorporated advanced thermo-mechanical modeling techniques and careful material selection to enhance both durability and operational efficiency.",
+                features: [
+                    "Optimized thermal engine design for performance and efficiency",
+                    "Advanced thermo-mechanical modeling and simulation",
+                    "Material selection for enhanced durability",
+                    "Innovative combustion and heat transfer technologies",
+                    "Comprehensive simulation and validation processes",
+                    "Compliance with industrial and environmental standards"
+                ],
+                technologies: ["CATIA", "SolidWorks", "Abaqus", "ANSYS", "Thermal Analysis", "Material Science"],
+                liveDemo: "#",
+                github: "#"
+            },
+            2: {
+                title: "Design of a Pressure Control System in a Hydraulic Circuit",
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80",
+                description: "This project aims to design and simulate a hydraulic pressure control system using MATLAB/Simulink.",
+                fullDescription: "This project focused on the design and simulation of a sophisticated hydraulic pressure control system. Using MATLAB/Simulink, we modeled the system dynamics and implemented a PID controller to ensure stable and precise pressure regulation under various operating conditions. The system demonstrates excellent performance in maintaining desired pressure levels despite external disturbances.",
+                features: [
+                    "Dynamic modeling of hydraulic systems",
+                    "PID controller implementation for pressure regulation",
+                    "Stability analysis under varying conditions",
+                    "Real-time pressure monitoring and control",
+                    "System performance optimization",
+                    "Simulation validation with real-world parameters"
+                ],
+                technologies: ["MATLAB", "Simulink", "PID Control", "Hydraulic Systems", "System Dynamics", "Control Theory"],
+                liveDemo: "#",
+                github: "#"
+            },
+            3: {
+                title: "Automotive Diagnostics System",
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                description: "Microcontroller-Based Automotive Monitoring Project",
+                fullDescription: "This project developed a comprehensive automotive diagnostics system using microcontroller technology. The system monitors various vehicle parameters in real-time, providing valuable insights into vehicle health and performance. It includes features for fault detection, performance analysis, and predictive maintenance alerts.",
+                features: [
+                    "Real-time monitoring of vehicle parameters",
+                    "Fault detection and diagnostic capabilities",
+                    "Performance analysis and reporting",
+                    "Predictive maintenance alerts",
+                    "User-friendly interface for data visualization",
+                    "Compatible with various vehicle systems"
+                ],
+                technologies: ["C/C++", "Assembly", "MPLAB X IDE", "PROTEUS", "PIC Microcontrollers", "Embedded Systems"],
+                liveDemo: "#",
+                github: "https://github.com/MOHAMEDDAGMOUMI97/Automotive_Diagnostic_System/tree/main"
+            },
+            4: {
+                title: "Design and Optimization of an ABS System (Anti-Lock Braking System)",
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                description: "Mechanical design and structural analysis of an Anti-Lock Braking System",
+                fullDescription: "This project involved the comprehensive design and optimization of an Anti-Lock Braking System (ABS) to enhance vehicle safety and braking efficiency. Using CATIA and SolidWorks for 3D modeling, and Abaqus for finite element analysis, the system was meticulously designed and optimized to deliver superior performance and reliability under real-world driving conditions.",
+                features: [
+                    "3D modeling of ABS components using CATIA and SolidWorks",
+                    "Finite element analysis for structural integrity",
+                    "Optimization for enhanced braking performance",
+                    "Safety and reliability validation",
+                    "Compatibility with various vehicle types",
+                    "Performance testing under different conditions"
+                ],
+                technologies: ["CATIA", "SolidWorks", "Abaqus", "Mechanical Design", "Finite Element Analysis", "Validation"],
+                liveDemo: "#",
+                github: "#"
+            },
+            5: {
+                title: "Amplitude Modulation",
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                description: "Fundamental communication technique for transmitting information via radio waves",
+                fullDescription: "This project explores Amplitude Modulation (AM), a fundamental technique in communication systems where the amplitude of a carrier signal is varied in accordance with the information signal. The project demonstrates how audio or data can be efficiently transmitted over long distances using radio waves, providing practical insights into signal processing and the foundational principles of modern communication systems.",
+                features: [
+                    "Implementation of amplitude modulation technique",
+                    "Carrier signal generation and modulation",
+                    "Demodulation for signal recovery",
+                    "Analysis of signal quality and integrity",
+                    "Practical applications in communication systems",
+                    "Understanding of radio wave transmission"
+                ],
+                technologies: ["PROTEUS", "Signal Processing", "Communication Systems", "Circuit Design", "Modulation Theory"],
+                liveDemo: "#",
+                github: "#"
+            }
+        };
+
         // Mobile Menu Toggle
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
@@ -1058,6 +1381,75 @@
                 menuToggle.setAttribute('aria-expanded', 'false');
             }
         });
+        
+        // Modal functionality
+        const modal = document.getElementById('projectModal');
+        const closeModal = document.querySelector('.close-modal');
+        const modalBody = document.querySelector('.modal-body');
+
+        // Open modal when clicking "View Details" or project card
+        document.querySelectorAll('.project-card, .view-details').forEach(element => {
+            element.addEventListener('click', (e) => {
+                // Don't open modal if clicking on links
+                if (e.target.tagName === 'A' || e.target.closest('a')) {
+                    return;
+                }
+                
+                const projectId = element.getAttribute('data-project');
+                openModal(projectId);
+            });
+        });
+
+        // Close modal functions
+        closeModal.addEventListener('click', closeModalFunc);
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModalFunc();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'block') {
+                closeModalFunc();
+            }
+        });
+
+        function openModal(projectId) {
+            const project = projectsData[projectId];
+            if (!project) return;
+
+            modalBody.innerHTML = `
+                <img src="${project.image}" alt="${project.title}" class="modal-image">
+                <h2 class="modal-title">${project.title}</h2>
+                <p class="modal-description">${project.fullDescription}</p>
+                
+                <div class="modal-features">
+                    <h4>Key Features</h4>
+                    <ul>
+                        ${project.features.map(feature => `<li>${feature}</li>`).join('')}
+                    </ul>
+                </div>
+                
+                <div class="modal-tech">
+                    ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                </div>
+                
+                <div class="modal-links">
+                    ${project.liveDemo !== '#' ? `<a href="${project.liveDemo}" class="modal-link" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>` : ''}
+                    ${project.github !== '#' ? `<a href="${project.github}" class="modal-link outline" target="_blank"><i class="fab fa-github"></i> Source Code</a>` : ''}
+                </div>
+            `;
+
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeModalFunc() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
         
         // Simple form submission handler
         document.getElementById('contactForm').addEventListener('submit', function(e) {
