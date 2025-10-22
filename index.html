@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Dagmoumi Essafi - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">MOHAMED <span>DAGMOUMI ESSAFI</span></a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hi, I'm <span style="color: var(--secondary);">MOHAMED DAGMOUMI ESSAFI</span></h1>
+                <h2>
+                    <a href="https://www.linkedin.com/in/mohamed-dagmoumi-essafi">Future Mechatronics Engineer</a>
+                    <a href="https://www.linkedin.com/in/mohamed-dagmoumi-essafi">Passionate about Machine Learning & Robotics</a>
+                    <a href="#">Building intelligent solutions</a>
+                    <a href="#">Tech Enthusiast</a>
+                </h2>
+                <p class="justified-text">I create intelligent systems and digital solutions that connect technology, innovation, and real-world impact.</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn">View My Work</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+            <div class="hero-image" aria-hidden="true"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="6032931731247584392.jpg" alt="Mohamed Dagmoumi Essafi - Mechatronics Engineer" loading="lazy">
+                </div>
+                <div class="about-text">
+                    <h3>Hello! I'm a passionate Mechatronics Engineer</h3>
+                    <p class="justified-text" >As a master's student of Mechatronics and Artificial Intelligence, I design and develop intelligent systems that combine mechanics, electronics, and software.</p>
+                    <p class="justified-text" >I'm passionate about Embeded Design, Quantitative Finance and the integration of ML solutions in Robotics. I enjoy exploring new technologies, learning about ML applications, and improving my programming skills.</p>
+                    <div class="skills">
+                        <div class="skill">MatLab/Simulink</div>
+                        <div class="skill">NI Multisim</div>
+                        <div class="skill">PROTEUS</div>
+                        <div class="skill">Ansys</div>
+                        <div class="skill">Abaqus</div>
+                        <div class="skill">CATIA</div>
+                        <div class="skill">SolidWorks</div>
+                        <div class="skill">C/C++</div>
+                        <div class="skill">Assembly</div>
+                        <div class="skill">Python</div>
+                        <div class="skill">VHDL</div>
+                        <div class="skill">MPLAB X IDE</div>
+                        <div class="skill">Git</div>
+                        <div class="skill">HTML/CSS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-project="1">
+                    <div class="project-image">
+                        <div class="carousel-container" data-carousel="1">
+                            <div class="carousel-slide active">
+                                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Thermal Engine Design - Overview" loading="lazy">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80" alt="Thermal Engine Design - Components" loading="lazy">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80" alt="Thermal Engine Design - Simulation" loading="lazy">
+                            </div>
+                        
+                            <button class="carousel-nav carousel-prev">‹</button>
+                            <button class="carousel-nav carousel-next">›</button>
+                            
+                            <div class="carousel-counter">
+                                <span class="current-slide">1</span>/<span class="total-slides">3</span>
+                            </div>
+                    
+                            <div class="carousel-controls">
+                                <button class="carousel-dot active" data-slide="0"></button>
+                                <button class="carousel-dot" data-slide="1"></button>
+                                <button class="carousel-dot" data-slide="2"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Design and Validation of a Thermal Engine</h3>
+                        <div class="project-content">
+                        <p>
+                            <i>Thermo-mechanical analysis and energy optimization – ANSYS, CATIA, SOLIDWORKS</i><br><br>
+                            - Designed an optimized thermal engine focused on performance, energy efficiency, and emission reduction.<br>
+                            - Conducted thermo-mechanical modeling and material selection to enhance durability and efficiency.<br>
+                            - Integrated innovative technologies for improved combustion and heat transfer.<br>
+                            - Performed simulations and validation to meet industrial and environmental standards.
+                        </p>
+                        </div>
+                        <div class="project-tags">
+                            <div class="project-tag">CATIA</div>
+                            <div class="project-tag">SolidWorks</div>
+                            <div class="project-tag">Abaqus</div>
+                        </div>
+                        <div class="project-links">
+                            <button class="project-link view-details" data-project="1">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card" data-project="2">
+                    
+                    <div class="project-image">
+                        <div class="carousel-container" data-carousel="2">
+                            <div class="carousel-slide active">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80" alt="Hydraulic System - Overview" loading="lazy">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80" alt="Hydraulic System - Components" loading="lazy">
+                            </div>
+                            
+                            <button class="carousel-nav carousel-prev">‹</button>
+                            <button class="carousel-nav carousel-next">›</button>
+                            
+                            <div class="carousel-counter">
+                                <span class="current-slide">1</span>/<span class="total-slides">2</span>
+                            </div>
+                            
+                            <div class="carousel-controls">
+                                <button class="carousel-dot active" data-slide="0"></button>
+                                <button class="carousel-dot" data-slide="1"></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-info">
+                        <h3>Design of a Pressure Control System in a Hydraulic Circuit</h3>
+                        <div class="project-content">
+                            <p>This project aims to design and simulate a hydraulic pressure control system using MATLAB/Simulink. It focuses on modeling the system's dynamics and implementing a PID controller to ensure stable and precise pressure regulation under varying conditions.</p>
+                        </div>
+                        <div class="project-tags">
+                            <div class="project-tag">MATLAB</div>
+                            <div class="project-tag">Simulink</div>
+                           
+                            <div class="project-tag">PID Control</div>
+                            <div class="project-tag">Hydraulic System</div>
+                            <div class="project-tag">Modeling & Simulation</div>
+                            <div class="project-tag">Mechatronics</div> 
+                        </div>
+                        <div class="project-links">
+                            <button class="project-link view-details" data-project="2">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card" data-project="3">
+                    <div class="project-image"> 
+                        <div class="carousel-container" data-carousel="3">
+                            <div class="carousel-slide active">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80" alt="Hydraulic System - Overview" loading="lazy">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80" alt="Hydraulic System - Components" loading="lazy">
+                            </div>
+                            
+                            <button class="carousel-nav carousel-prev">‹</button>
+                            <button class="carousel-nav carousel-next">›</button>
+                            
+                            <div class="carousel-counter">
+                                <span class="current-slide">1</span>/<span class="total-slides">2</span>
+                            </div>
+                            
+                            <div class="carousel-controls">
+                                <button class="carousel-dot active" data-slide="0"></button>
+                                <button class="carousel-dot" data-slide="1"></button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="project-info">
+                        <h3>Automotive Diagnostics System</h3>
+                        <div class="project-content">
+                        <p>Microcontroller-Based Automotive Monitoring Project</p>
+                        </div>
+                        <div class="project-tags">
+                            <div class="project-tag">C/C++</div>
+                            <div class="project-tag">Assembly</div>
+                            <div class="project-tag">MPLAB X IDE</div>
+                            <div class="project-tag">PROTEUS</div>
+                            <div class="project-tag">PIC</div>
+                        </div>
+                        <div class="project-links">
+                            <button class="project-link view-details" data-project="3">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                            <a href="https://github.com/MOHAMEDDAGMOUMI97/Automotive_Diagnostic_System/tree/main" class="project-link">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-project="4">
+                    <div class="project-image">
+                        <div class="carousel-container" data-carousel="4">
+                            <div class="carousel-slide active">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80" alt="Hydraulic System - Overview" loading="lazy">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80" alt="Hydraulic System - Components" loading="lazy">
+                            </div>
+                            
+                            <button class="carousel-nav carousel-prev">‹</button>
+                            <button class="carousel-nav carousel-next">›</button>
+                            
+                            <div class="carousel-counter">
+                                <span class="current-slide">1</span>/<span class="total-slides">2</span>
+                            </div>
+                            
+                            <div class="carousel-controls">
+                                <button class="carousel-dot active" data-slide="0"></button>
+                                <button class="carousel-dot" data-slide="1"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Design and Optimization of an ABS System (Anti-Lock Braking System)</h3>
+                        <div class="project-content">
+                        <p>This project involves the mechanical design and structural analysis of an Anti-Lock Braking System to improve vehicle safety and braking efficiency. Using CATIA and SolidWorks for 3D modeling, and Abaqus for finite element analysis, the system was optimized to enhance performance and reliability under real-world conditions.</p>
+                        </div>
+                        <div class="project-tags">
+                            <div class="project-tag">CATIA</div>
+                            <div class="project-tag">SolidWorks</div>
+                            <div class="project-tag">Abaqus</div>
+                            <div class="project-tag">Mechanical Design</div>
+                            <div class="project-tag">Validation</div>
+                        </div>
+                        <div class="project-links">
+                            <button class="project-link view-details" data-project="4">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                            <a href="https://github.com/MOHAMEDDAGMOUMI97/Automotive_Diagnostic_System/tree/main" class="project-link">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card" data-project="5">
+                    <div class="project-image">
+                        <div class="carousel-container" data-carousel="">
+                            <div class="carousel-slide active">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80" alt="Hydraulic System - Overview" loading="lazy">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80" alt="Hydraulic System - Components" loading="lazy">
+                            </div>
+                            
+                            <button class="carousel-nav carousel-prev">‹</button>
+                            <button class="carousel-nav carousel-next">›</button>
+                            
+                            <div class="carousel-counter">
+                                <span class="current-slide">1</span>/<span class="total-slides">2</span>
+                            </div>
+                            
+                            <div class="carousel-controls">
+                                <button class="carousel-dot active" data-slide="0"></button>
+                                <button class="carousel-dot" data-slide="1"></button>
+                            </div>
+                        </div>   
+                    </div>
+                    <div class="project-info">
+                        <h3>Amplitude Modulation</h3>
+                        <div class="project-content">
+                        <p>This project focuses on Amplitude Modulation (AM), a fundamental communication technique in which the amplitude of a carrier signal is varied according to the information signal.</p>
+                        <p>It demonstrates how audio or data can be transmitted over long distances using radio waves, providing a practical understanding of signal processing and the foundations of modern communication systems.</p>
+                        </div>
+                        <div class="project-tags">
+                            <div class="project-tag">PROTEUS</div>
+                            <div class="project-tag">signal processing</div>
+                            <div class="project-tag">Communication Systems</div>
+                        </div>
+                        <div class="project-links">
+                            <button class="project-link view-details" data-project="5">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                            <a href="https://github.com/MOHAMEDDAGMOUMI97/Automotive_Diagnostic_System/tree/main" class="project-link">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <!-- Content will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>TANGIER, MOROCCO</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>Mohammeddagmoumiessafi@outlook.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>+212 654 980 007</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/mnngyego" method="POST" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">MOHAMED <span>DAGMOUMI ESSAFI</span></div>
+                <div class="social-links">
+                    <a href="https://github.com/MOHAMEDDAGMOUMI97" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mohamed-dagmoumi-essafi" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Dribbble">
+                        <i class="fab fa-dribbble"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 MOHAMED DAGMOUMI ESSAFI. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" ></script>
+</body>
+</html>
+
+
+
+
+
+
+
