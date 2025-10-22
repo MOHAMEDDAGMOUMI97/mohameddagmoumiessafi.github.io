@@ -360,7 +360,95 @@
             height: 200px;
             overflow: hidden;
             flex-shrink: 0; /* Prevent image from shrinking */
+            position: relative;
         }
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top :0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        .carousel-dot:hover {
+            background: rgba(255, 255, 255, 0.8);
+        }
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+        .project-image:hover .carousel-nav {
+            opacity: 1;
+        }
+        .carousel-nav:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .carousel-prev {
+            left: 10px;
+        }
+        .carousel-next {
+            right: 10px;
+        }
+        .carousel-counter {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            z-index: 10;
+        }
+
+
 
         .project-image img {
             width: 100%;
@@ -476,21 +564,21 @@
 
                 /* Responsive adjustments */
         @media (max-width: 768px) {
-        .project-card {
+            .project-card {
                 height: 450px; /* Slightly smaller on mobile */
             }
         }
 
         @media (max-width: 480px) {
-        .project-card {
+            .project-card {
                 height: 420px; /* Even smaller on very small screens */
             }
             
-        .project-links {
+            .project-links {
                 flex-direction: column;
             }
             
-        .project-link {
+            .project-link {
                 justify-content: center;
             }
         }
@@ -980,6 +1068,137 @@
             }
         }
 
+        /* === MODAL CAROUSEL === */
+        .modal-carousel {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .modal-carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .modal-carousel-slide.active {
+            opacity: 1;
+        }
+
+        .modal-carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-carousel-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .modal-carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .modal-carousel-dot.active {
+            background: white;
+            transform: scale(1.3);
+        }
+
+        .modal-carousel-dot:hover {
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .modal-carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .modal-carousel-nav:hover {
+            background: rgba(0, 0, 0, 0.9);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .modal-carousel-prev {
+            left: 20px;
+        }
+
+        .modal-carousel-next {
+            right: 20px;
+        }
+
+        .modal-carousel-counter {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            z-index: 10;
+        }
+
+        /* Responsive modal carousel */
+        @media (max-width: 768px) {
+            .modal-carousel {
+                height: 300px;
+            }
+            
+            .modal-carousel-nav {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .modal-carousel-prev {
+                left: 10px;
+            }
+            
+            .modal-carousel-next {
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .modal-carousel {
+                height: 250px;
+            }
+        }
+
+
+
         .sr-only {
             position: absolute;
             width: 1px;
@@ -1102,7 +1321,30 @@
                 <!-- Project 1 -->
                 <div class="project-card" data-project="1">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Thermal Engine Design Project" loading="lazy">
+                        <div class="carousel-container" data-carousel="1">
+                            <div class="carousel-slide active">
+                                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Thermal Engine Design - Overview" loading="lazy">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80" alt="Thermal Engine Design - Components" loading="lazy">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80" alt="Thermal Engine Design - Simulation" loading="lazy">
+                            </div>
+                        
+                            <button class="carousel-nav carousel-prev">‹</button>
+                            <button class="carousel-nav carousel-next">›</button>
+                            
+                            <div class="carousel-counter">
+                                <span class="current-slide">1</span>/<span class="total-slides">3</span>
+                            </div>
+                    
+                            <div class="carousel-controls">
+                                <button class="carousel-dot active" data-slide="0"></button>
+                                <button class="carousel-dot" data-slide="1"></button>
+                                <button class="carousel-dot" data-slide="2"></button>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-info">
                         <h3>Design and Validation of a Thermal Engine</h3>
@@ -1133,9 +1375,30 @@
                 
                 <!-- Project 2 -->
                 <div class="project-card" data-project="2">
+                    
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80" alt="Hydraulic Pressure Control System" loading="lazy">
+                        <div class="carousel-container" data-carousel="2">
+                            <div class="carousel-slide active">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80" alt="Hydraulic System - Overview" loading="lazy">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80" alt="Hydraulic System - Components" loading="lazy">
+                            </div>
+                            
+                            <button class="carousel-nav carousel-prev">‹</button>
+                            <button class="carousel-nav carousel-next">›</button>
+                            
+                            <div class="carousel-counter">
+                                <span class="current-slide">1</span>/<span class="total-slides">2</span>
+                            </div>
+                            
+                            <div class="carousel-controls">
+                                <button class="carousel-dot active" data-slide="0"></button>
+                                <button class="carousel-dot" data-slide="1"></button>
+                            </div>
+                        </div>
                     </div>
+                    
                     <div class="project-info">
                         <h3>Design of a Pressure Control System in a Hydraulic Circuit</h3>
                         <div class="project-content">
@@ -1163,9 +1426,29 @@
                 
                 <!-- Project 3 -->
                 <div class="project-card" data-project="3">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Automotive Diagnostics System" loading="lazy">
+                    <div class="project-image"> 
+                        <div class="carousel-container" data-carousel="3">
+                            <div class="carousel-slide active">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80" alt="Hydraulic System - Overview" loading="lazy">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80" alt="Hydraulic System - Components" loading="lazy">
+                            </div>
+                            
+                            <button class="carousel-nav carousel-prev">‹</button>
+                            <button class="carousel-nav carousel-next">›</button>
+                            
+                            <div class="carousel-counter">
+                                <span class="current-slide">1</span>/<span class="total-slides">2</span>
+                            </div>
+                            
+                            <div class="carousel-controls">
+                                <button class="carousel-dot active" data-slide="0"></button>
+                                <button class="carousel-dot" data-slide="1"></button>
+                            </div>
+                        </div>
                     </div>
+                
                     <div class="project-info">
                         <h3>Automotive Diagnostics System</h3>
                         <div class="project-content">
@@ -1192,7 +1475,26 @@
                 <!-- Project 4 -->
                 <div class="project-card" data-project="4">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="ABS System Design" loading="lazy">
+                        <div class="carousel-container" data-carousel="4">
+                            <div class="carousel-slide active">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80" alt="Hydraulic System - Overview" loading="lazy">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80" alt="Hydraulic System - Components" loading="lazy">
+                            </div>
+                            
+                            <button class="carousel-nav carousel-prev">‹</button>
+                            <button class="carousel-nav carousel-next">›</button>
+                            
+                            <div class="carousel-counter">
+                                <span class="current-slide">1</span>/<span class="total-slides">2</span>
+                            </div>
+                            
+                            <div class="carousel-controls">
+                                <button class="carousel-dot active" data-slide="0"></button>
+                                <button class="carousel-dot" data-slide="1"></button>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-info">
                         <h3>Design and Optimization of an ABS System (Anti-Lock Braking System)</h3>
@@ -1220,7 +1522,26 @@
                 <!-- Project 5 -->
                 <div class="project-card" data-project="5">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Amplitude Modulation Project" loading="lazy">
+                        <div class="carousel-container" data-carousel="">
+                            <div class="carousel-slide active">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80" alt="Hydraulic System - Overview" loading="lazy">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80" alt="Hydraulic System - Components" loading="lazy">
+                            </div>
+                            
+                            <button class="carousel-nav carousel-prev">‹</button>
+                            <button class="carousel-nav carousel-next">›</button>
+                            
+                            <div class="carousel-counter">
+                                <span class="current-slide">1</span>/<span class="total-slides">2</span>
+                            </div>
+                            
+                            <div class="carousel-controls">
+                                <button class="carousel-dot active" data-slide="0"></button>
+                                <button class="carousel-dot" data-slide="1"></button>
+                            </div>
+                        </div>   
                     </div>
                     <div class="project-info">
                         <h3>Amplitude Modulation</h3>
@@ -1349,7 +1670,11 @@
         const projectsData = {
             1: {
                 title: "Design and Validation of a Thermal Engine",
-                image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+                image: [
+                    "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+                    "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80",
+                    "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80"
+                ],
                 description: "Thermo-mechanical analysis and energy optimization – ANSYS, CATIA, SOLIDWORKS",
                 fullDescription: "This project involved the comprehensive design and validation of a thermal engine with a focus on performance optimization, energy efficiency, and emission reduction. The design process incorporated advanced thermo-mechanical modeling techniques and careful material selection to enhance both durability and operational efficiency.",
                 features: [
@@ -1366,7 +1691,10 @@
             },
             2: {
                 title: "Design of a Pressure Control System in a Hydraulic Circuit",
-                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80",
+                image: [
+                    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80",
+                    "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80"
+                ],
                 description: "This project aims to design and simulate a hydraulic pressure control system using MATLAB/Simulink.",
                 fullDescription: "This project focused on the design and simulation of a sophisticated hydraulic pressure control system. Using MATLAB/Simulink, we modeled the system dynamics and implemented a PID controller to ensure stable and precise pressure regulation under various operating conditions. The system demonstrates excellent performance in maintaining desired pressure levels despite external disturbances.",
                 features: [
@@ -1383,8 +1711,11 @@
             },
             3: {
                 title: "Automotive Diagnostics System",
-                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-                description: "Microcontroller-Based Automotive Monitoring Project",
+                image: [
+                    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80",
+                    "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80"
+                ],
+                 description: "Microcontroller-Based Automotive Monitoring Project",
                 fullDescription: "This project developed a comprehensive automotive diagnostics system using microcontroller technology. The system monitors various vehicle parameters in real-time, providing valuable insights into vehicle health and performance. It includes features for fault detection, performance analysis, and predictive maintenance alerts.",
                 features: [
                     "Real-time monitoring of vehicle parameters",
@@ -1400,7 +1731,10 @@
             },
             4: {
                 title: "Design and Optimization of an ABS System (Anti-Lock Braking System)",
-                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                image: [
+                    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80",
+                    "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80"
+                ],
                 description: "Mechanical design and structural analysis of an Anti-Lock Braking System",
                 fullDescription: "This project involved the comprehensive design and optimization of an Anti-Lock Braking System (ABS) to enhance vehicle safety and braking efficiency. Using CATIA and SolidWorks for 3D modeling, and Abaqus for finite element analysis, the system was meticulously designed and optimized to deliver superior performance and reliability under real-world driving conditions.",
                 features: [
@@ -1417,7 +1751,10 @@
             },
             5: {
                 title: "Amplitude Modulation",
-                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                image: [
+                    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80",
+                    "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80"
+                ],
                 description: "Fundamental communication technique for transmitting information via radio waves",
                 fullDescription: "This project explores Amplitude Modulation (AM), a fundamental technique in communication systems where the amplitude of a carrier signal is varied in accordance with the information signal. The project demonstrates how audio or data can be efficiently transmitted over long distances using radio waves, providing practical insights into signal processing and the foundational principles of modern communication systems.",
                 features: [
@@ -1493,13 +1830,40 @@
                 closeModalFunc();
             }
         });
+        //
+
+
 
         function openModal(projectId) {
             const project = projectsData[projectId];
             if (!project) return;
 
+            // Generate carousel HTML
+            const carouselHTML = `
+                <div class="modal-carousel" data-modal-carousel="${projectId}">
+                    ${project.image.map((img, index) => `
+                        <div class="modal-carousel-slide ${index === 0 ? 'active' : ''}">
+                            <img src="${img}" alt="${project.title} - Image ${index + 1}" loading="lazy">
+                        </div>
+                    `).join('')}
+            
+                    <button class="modal-carousel-nav modal-carousel-prev">‹</button>
+                    <button class="modal-carousel-nav modal-carousel-next">›</button>
+                    
+                    <div class="modal-carousel-counter">
+                        <span class="modal-current-slide">1</span>/<span class="modal-total-slides">${project.image.length}</span>
+                    </div>
+                    
+                    <div class="modal-carousel-controls">
+                        ${project.image.map((_, index) => `
+                            <button class="modal-carousel-dot ${index === 0 ? 'active' : ''}" data-modal-slide="${index}"></button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
             modalBody.innerHTML = `
-                <img src="${project.image}" alt="${project.title}" class="modal-image">
+                ${carouselHTML}
                 <h2 class="modal-title">${project.title}</h2>
                 <p class="modal-description">${project.fullDescription}</p>
                 
@@ -1509,7 +1873,7 @@
                         ${project.features.map(feature => `<li>${feature}</li>`).join('')}
                     </ul>
                 </div>
-                
+        
                 <div class="modal-tech">
                     ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
                 </div>
@@ -1521,7 +1885,10 @@
             `;
 
             modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
+            document.body.style.overflow = 'hidden';
+            
+            // Initialize modal carousel
+            initializeModalCarousel(projectId);
         }
 
         function closeModalFunc() {
@@ -1607,7 +1974,230 @@
             link.setAttribute('target', '_blank');
             link.setAttribute('rel', 'noopener noreferrer');
         });
+
+
+        // Image Carousel Functionality
+        function initializeCarousels() {
+            const carousels = document.querySelectorAll('.carousel-container');
+            
+            carousels.forEach(carousel => {
+                const slides = carousel.querySelectorAll('.carousel-slide');
+                const dots = carousel.querySelectorAll('.carousel-dot');
+                const prevBtn = carousel.querySelector('.carousel-prev');
+                const nextBtn = carousel.querySelector('.carousel-next');
+                const currentSlide = carousel.querySelector('.current-slide');
+                const totalSlides = carousel.querySelector('.total-slides');
+                
+                let currentIndex = 0;
+                totalSlides.textContent = slides.length;
+                
+                function showSlide(index) {
+                    // Remove active class from all slides and dots
+                    slides.forEach(slide => slide.classList.remove('active'));
+                    dots.forEach(dot => dot.classList.remove('active'));
+                    
+                    // Add active class to current slide and dot
+                    slides[index].classList.add('active');
+                    dots[index].classList.add('active');
+                    
+                    // Update counter
+                    currentSlide.textContent = index + 1;
+                    currentIndex = index;
+                }
+                
+                // Next slide
+                function nextSlide() {
+                    let newIndex = currentIndex + 1;
+                    if (newIndex >= slides.length) {
+                        newIndex = 0;
+                    }
+                    showSlide(newIndex);
+                }
+                
+                // Previous slide
+                function prevSlide() {
+                    let newIndex = currentIndex - 1;
+                    if (newIndex < 0) {
+                        newIndex = slides.length - 1;
+                    }
+                    showSlide(newIndex);
+                }
+                
+                // Event listeners
+                nextBtn.addEventListener('click', nextSlide);
+                prevBtn.addEventListener('click', prevSlide);
+                
+                // Dot navigation
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        showSlide(index);
+                    });
+                });
+                
+                // Auto-advance (optional)
+                let autoAdvance = setInterval(nextSlide, 5000);
+                
+                // Pause auto-advance on hover
+                carousel.addEventListener('mouseenter', () => {
+                    clearInterval(autoAdvance);
+                });
+                
+                carousel.addEventListener('mouseleave', () => {
+                    autoAdvance = setInterval(nextSlide, 5000);
+                });
+                
+                // Touch swipe support for mobile
+                let startX = 0;
+                let endX = 0;
+                
+                carousel.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                });
+                
+                carousel.addEventListener('touchend', (e) => {
+                    endX = e.changedTouches[0].clientX;
+                    handleSwipe();
+                });
+                
+                function handleSwipe() {
+                    const swipeThreshold = 50;
+                    const diff = startX - endX;
+                    
+                    if (Math.abs(diff) > swipeThreshold) {
+                        if (diff > 0) {
+                            nextSlide(); // Swipe left
+                        } else {
+                            prevSlide(); // Swipe right
+                        }
+                    }
+                }
+
+                
+            });
+        }
+
+        // Modal Carousel Functionality
+        function initializeModalCarousel(projectId) {
+            const carousel = document.querySelector(`[data-modal-carousel="${projectId}"]`);
+            if (!carousel) return;
+            
+            const slides = carousel.querySelectorAll('.modal-carousel-slide');
+            const dots = carousel.querySelectorAll('.modal-carousel-dot');
+            const prevBtn = carousel.querySelector('.modal-carousel-prev');
+            const nextBtn = carousel.querySelector('.modal-carousel-next');
+            const currentSlide = carousel.querySelector('.modal-current-slide');
+            const totalSlides = carousel.querySelector('.modal-total-slides');
+            
+            let currentIndex = 0;
+            totalSlides.textContent = slides.length;
+            
+            function showSlide(index) {
+                // Remove active class from all slides and dots
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                // Add active class to current slide and dot
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                
+                // Update counter
+                currentSlide.textContent = index + 1;
+                currentIndex = index;
+            }
+            
+            // Next slide
+            function nextSlide() {
+                let newIndex = currentIndex + 1;
+                if (newIndex >= slides.length) {
+                    newIndex = 0;
+                }
+                showSlide(newIndex);
+            }
+            
+            // Previous slide
+            function prevSlide() {
+                let newIndex = currentIndex - 1;
+                if (newIndex < 0) {
+                    newIndex = slides.length - 1;
+                }
+                showSlide(newIndex);
+            }
+            
+            // Event listeners
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+            
+            // Dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showSlide(index);
+                });
+            });
+            
+            // Keyboard navigation
+            function handleKeydown(e) {
+                if (modal.style.display === 'block') {
+                    if (e.key === 'ArrowLeft') {
+                        prevSlide();
+                    } else if (e.key === 'ArrowRight') {
+                        nextSlide();
+                    }
+                }
+            }
+            
+            document.addEventListener('keydown', handleKeydown);
+            
+            // Clean up event listener when modal closes
+            const originalCloseModalFunc = closeModalFunc;
+            window.closeModalFunc = function() {
+                document.removeEventListener('keydown', handleKeydown);
+                originalCloseModalFunc();
+            };
+            
+            // Auto-advance (optional)
+            let autoAdvance = setInterval(nextSlide, 4000);
+            
+            // Pause auto-advance on hover
+            carousel.addEventListener('mouseenter', () => {
+                clearInterval(autoAdvance);
+            });
+            
+            carousel.addEventListener('mouseleave', () => {
+                autoAdvance = setInterval(nextSlide, 4000);
+            });
+            
+            // Touch swipe support for mobile
+            let startX = 0;
+            let endX = 0;
+            
+            carousel.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+            });
+            
+            carousel.addEventListener('touchend', (e) => {
+                endX = e.changedTouches[0].clientX;
+                handleSwipe();
+            });
+            
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = startX - endX;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        nextSlide(); // Swipe left
+                    } else {
+                        prevSlide(); // Swipe right
+                    }
+                }
+            }
+        }
+
+
+
+        // Initialize carousels when page loads
+        document.addEventListener('DOMContentLoaded', initializeCarousels);
+
     </script>
 </body>
 </html>
-
