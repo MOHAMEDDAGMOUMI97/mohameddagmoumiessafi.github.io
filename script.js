@@ -81,11 +81,33 @@
                 liveDemo: "#",
                 github: "#"
             },
-            5: {
-                title: "Amplitude Modulation",
+
+			5: {
+                title: "Mechanical Behavior Analysis of Materials — Compression and Tension Tests with Abaqus Simulation",
                 image: [
                     "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80",
                     "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80"
+                ],
+                description: "Mechanical design and structural analysis of an Anti-Lock Braking System",
+                fullDescription: "This project involved the comprehensive design and optimization of an Anti-Lock Braking System (ABS) to enhance vehicle safety and braking efficiency. Using CATIA and SolidWorks for 3D modeling, and Abaqus for finite element analysis, the system was meticulously designed and optimized to deliver superior performance and reliability under real-world driving conditions.",
+                features: [
+                    "Experimental Testing",
+                    "Mechanical Parameters Determination",
+                    "Numerical Simulation with Abaqus",
+                    "Comparative Study",
+                    "Engineering Insight",
+                    
+                ],
+                technologies: ["Abaqus", "Mechanical Design", "Finite Element Analysis", "Validation"],
+                liveDemo: "#",
+                github: "#"
+            },
+			
+            6: {
+                title: "Amplitude Modulation",
+                image: [
+                    "Projects/AM/Amfm3-en-de.gif",
+                    ""
                 ],
                 description: "Fundamental communication technique for transmitting information via radio waves",
                 fullDescription: "This project explores Amplitude Modulation (AM), a fundamental technique in communication systems where the amplitude of a carrier signal is varied in accordance with the information signal. The project demonstrates how audio or data can be efficiently transmitted over long distances using radio waves, providing practical insights into signal processing and the foundational principles of modern communication systems.",
@@ -101,6 +123,7 @@
                 liveDemo: "#",
                 github: "#"
             }
+			
         };
 
         // Mobile Menu Toggle
