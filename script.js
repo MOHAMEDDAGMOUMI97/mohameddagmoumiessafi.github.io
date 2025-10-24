@@ -91,14 +91,14 @@
                 description: "Mechanical design and structural analysis of an Anti-Lock Braking System",
                 fullDescription: "This project involved the comprehensive design and optimization of an Anti-Lock Braking System (ABS) to enhance vehicle safety and braking efficiency. Using CATIA and SolidWorks for 3D modeling, and Abaqus for finite element analysis, the system was meticulously designed and optimized to deliver superior performance and reliability under real-world driving conditions.",
                 features: [
-                    "Experimental Testing",
-                    "Mechanical Parameters Determination",
-                    "Numerical Simulation with Abaqus",
-                    "Comparative Study",
-                    "Engineering Insight",
-                    
+                    "Comprehensive Multi-Material and Multi-Test Analysis",
+                    "Integrated Experimental and Numerical Workflow",
+                    "Extraction of Fundamental Mechanical Properties",
+                    "Advanced Finite Element Analysis (FEA) with Abaqus",
+                    "Detailed Result Visualization and Interpretation",
+                    "Practical Engineering Insight and Application"
                 ],
-                technologies: ["Abaqus", "Mechanical Design", "Finite Element Analysis", "Validation"],
+                technologies: ["Abaqus", "Mechanical Design", "Finite Element Method (FEM)", "Validation"],
                 liveDemo: "#",
                 github: "#"
             },
