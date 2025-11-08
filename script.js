@@ -24,9 +24,9 @@
             2: {
                 title: "Design of a Pressure Control System in a Hydraulic Circuit",
                 image: [
-                    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80",
-                    "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80"
-                ],
+                    "Projects/automatique/1.png",
+                    "Projects/automatique/2.png"
+                       ],
                 description: "This project aims to design and simulate a hydraulic pressure control system using MATLAB/Simulink.",
                 fullDescription: "This project focused on the design and simulation of a sophisticated hydraulic pressure control system. Using MATLAB/Simulink, we modeled the system dynamics and implemented a PID controller to ensure stable and precise pressure regulation under various operating conditions. The system demonstrates excellent performance in maintaining desired pressure levels despite external disturbances.",
                 features: [
@@ -44,8 +44,8 @@
             3: {
                 title: "Automotive Diagnostics System",
                 image: [
-                    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80",
-                    "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80"
+                    "Projects/microcontroller/simulation-2.png",
+                    "Projects/microcontroller/simulation-1.png"
                 ],
                  description: "Microcontroller-Based Automotive Monitoring Project",
                 fullDescription: "This project developed a comprehensive automotive diagnostics system using microcontroller technology. The system monitors various vehicle parameters in real-time, providing valuable insights into vehicle health and performance. It includes features for fault detection, performance analysis, and predictive maintenance alerts.",
@@ -85,8 +85,12 @@
 			5: {
                 title: "Mechanical Behavior Analysis of Materials — Compression and Tension Tests with Abaqus Simulation",
                 image: [
-                    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80",
-                    "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80"
+                    "Projects/Mecanique/tubePlastic/Image1.png",
+                    "Projects/Mecanique/tubePlastic/Image5.png",
+                    "Projects/Mecanique/AL/Image7.png",
+                    "Projects/Mecanique/AL/Image9.png",
+                    "Projects/Mecanique/Caouacho/Image13.png",
+                    "Projects/Mecanique/Caouacho/Image14.png"
                 ],
                 description: "Mechanical design and structural analysis of an Anti-Lock Braking System",
                 fullDescription: "This project involved the comprehensive design and optimization of an Anti-Lock Braking System (ABS) to enhance vehicle safety and braking efficiency. Using CATIA and SolidWorks for 3D modeling, and Abaqus for finite element analysis, the system was meticulously designed and optimized to deliver superior performance and reliability under real-world driving conditions.",
@@ -106,8 +110,14 @@
             6: {
                 title: "Amplitude Modulation",
                 image: [
-                    "Projects/AM/Amfm3-en-de.gif",
-                    ""
+                            "Projects/pfe/Picture1.jpg",
+                            "Projects/pfe/Picture2.jpg",
+                            "Projects/pfe/Picture3.jpg",
+                            "Projects/pfe/Picture4.png",
+                            "Projects/pfe/Picture7.jpg",
+                            "Projects/pfe/Picture9.jpg",
+
+                    
                 ],
                 description: "Fundamental communication technique for transmitting information via radio waves",
                 fullDescription: "This project explores Amplitude Modulation (AM), a fundamental technique in communication systems where the amplitude of a carrier signal is varied in accordance with the information signal. The project demonstrates how audio or data can be efficiently transmitted over long distances using radio waves, providing practical insights into signal processing and the foundational principles of modern communication systems.",
