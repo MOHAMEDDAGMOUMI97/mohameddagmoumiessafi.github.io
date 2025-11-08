@@ -3,9 +3,11 @@
             1: {
                 title: "Design and Validation of a Thermal Engine",
                 image: [
-                    "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
-                    "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80",
-                    "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80"
+                    "Projects/ABS/sol2.png",
+                    "Projects/ABS/val2.png",
+                    "Projects/ABS/sol1.png",
+					"Projects/ABS/cao2.png",
+					"Projects/ABS/cao1.png"
                 ],
                 description: "Thermo-mechanical analysis and energy optimization – ANSYS, CATIA, SOLIDWORKS",
                 fullDescription: "This project involved the comprehensive design and validation of a thermal engine with a focus on performance optimization, energy efficiency, and emission reduction. The design process incorporated advanced thermo-mechanical modeling techniques and careful material selection to enhance both durability and operational efficiency.",
