@@ -66,8 +66,10 @@
             4: {
                 title: "Design and Optimization of an ABS System (Anti-Lock Braking System)",
                 image: [
-                    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80",
-                    "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80"
+                    "Projects/Moteur/one.png",
+                    "Projects/Moteur/two.png",
+					"Projects/Moteur/tree.png"
+					
                 ],
                 description: "Mechanical design and structural analysis of an Anti-Lock Braking System",
                 fullDescription: "This project involved the comprehensive design and optimization of an Anti-Lock Braking System (ABS) to enhance vehicle safety and braking efficiency. Using CATIA and SolidWorks for 3D modeling, and Abaqus for finite element analysis, the system was meticulously designed and optimized to deliver superior performance and reliability under real-world driving conditions.",
