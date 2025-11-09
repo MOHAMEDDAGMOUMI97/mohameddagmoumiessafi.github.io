@@ -3,11 +3,9 @@
             1: {
                 title: "Design and Validation of a Thermal Engine",
                 image: [
-                    "Projects/ABS/sol2.png",
-                    "Projects/ABS/val2.png",
-                    "Projects/ABS/sol1.png",
-					"Projects/ABS/cao2.png",
-					"Projects/ABS/cao1.png"
+                   "Projects/Moteur/one.png",
+                    "Projects/Moteur/two.png",
+					"Projects/Moteur/tree.png"
                 ],
                 description: "Thermo-mechanical analysis and energy optimization – ANSYS, CATIA, SOLIDWORKS",
                 fullDescription: "This project involved the comprehensive design and validation of a thermal engine with a focus on performance optimization, energy efficiency, and emission reduction. The design process incorporated advanced thermo-mechanical modeling techniques and careful material selection to enhance both durability and operational efficiency.",
@@ -66,9 +64,11 @@
             4: {
                 title: "Design and Optimization of an ABS System (Anti-Lock Braking System)",
                 image: [
-                    "Projects/Moteur/one.png",
-                    "Projects/Moteur/two.png",
-					"Projects/Moteur/tree.png"
+                    "Projects/ABS/sol2.png",
+                    "Projects/ABS/val2.png",
+                    "Projects/ABS/sol1.png",
+					"Projects/ABS/cao2.png",
+					"Projects/ABS/cao1.png"
 					
                 ],
                 description: "Mechanical design and structural analysis of an Anti-Lock Braking System",
