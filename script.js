@@ -64,11 +64,12 @@
             4: {
                 title: "Design and Optimization of an ABS System (Anti-Lock Braking System)",
                 image: [
-                    "Projects/ABS/sol2.png",
+                    "Projects/ABS/dd2.tif",
+					"Projects/ABS/dd.tif",
                     "Projects/ABS/val2.png",
-                    "Projects/ABS/sol1.png",
-					"Projects/ABS/cao2.png",
-					"Projects/ABS/cao1.png"
+                    "Projects/ABS/ABS1.PNG",
+					"Projects/ABS/ABS2 3d.PNG",
+					"Projects/ABS/ABS3.PNG"
 					
                 ],
                 description: "Mechanical design and structural analysis of an Anti-Lock Braking System",
